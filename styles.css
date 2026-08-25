@@ -1,0 +1,176 @@
+/* ========================================================================
+   Общее оформление сайта.
+   Этот файл подключается ко всем страницам — меняете тут, меняется везде.
+   Цвета вынесены в "переменные" (--имя) в начале, чтобы их было легко править.
+   ======================================================================== */
+
+/* --- Цвета для светлой темы (по умолчанию) --- */
+:root {
+  --bg:        #ffffff;   /* фон страницы */
+  --text:      #1a1a2e;   /* основной текст */
+  --muted:     #6b7280;   /* приглушённый текст (даты, подписи) */
+  --accent:    #2563eb;   /* акцентный цвет (ссылки, кнопки) */
+  --card:      #f4f5f7;   /* фон карточек */
+  --border:    #e5e7eb;   /* линии-разделители */
+  --max-width: 760px;     /* максимальная ширина текста */
+}
+
+/* --- Цвета для тёмной темы (если у пользователя тёмный режим) --- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:     #0f1117;
+    --text:   #e5e7eb;
+    --muted:  #9ca3af;
+    --accent: #60a5fa;
+    --card:   #1a1d27;
+    --border: #2a2e3a;
+  }
+}
+
+/* --- Базовые правила --- */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Контейнер, который держит контент по центру и не даёт ему растекаться */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- Шапка сайта с меню --- */
+.site-header {
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+  margin-bottom: 40px;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.site-logo {
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--text);
+  text-decoration: none;
+}
+.site-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 16px;
+}
+.site-nav a:hover { color: var(--accent); }
+
+/* --- Заголовки --- */
+h1 { font-size: 40px; line-height: 1.2; margin: 0 0 12px; }
+h2 { font-size: 28px; margin: 40px 0 12px; }
+h3 { font-size: 22px; margin: 28px 0 8px; }
+
+/* --- Ссылки --- */
+a { color: var(--accent); }
+
+/* --- Блок "обо мне" на главной --- */
+.intro { margin-bottom: 20px; }
+.intro .lead { font-size: 22px; color: var(--muted); }
+
+/* --- Карточки проектов и статей --- */
+.card {
+  display: block;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform .12s ease, border-color .12s ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+.card h3 { margin-top: 0; }
+.card p { margin: 6px 0 0; color: var(--muted); font-size: 16px; }
+.card .date { font-size: 14px; color: var(--muted); }
+
+/* --- Кнопки-ссылки на контакты --- */
+.links { margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap; }
+.links a {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 16px;
+}
+.links a:hover { border-color: var(--accent); color: var(--accent); }
+
+/* --- Подвал --- */
+.site-footer {
+  border-top: 1px solid var(--border);
+  margin-top: 60px;
+  padding: 24px 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* --- Теги навыков --- */
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.tag {
+  display: inline-block;
+  padding: 5px 12px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 14px;
+  color: var(--text);
+}
+
+/* --- Блоки опыта работы (таймлайн) --- */
+.exp {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+}
+.exp:last-child { border-bottom: none; }
+.exp .period { font-size: 14px; color: var(--muted); }
+.exp h3 { margin: 4px 0 2px; }
+.exp .company { color: var(--accent); font-size: 16px; margin: 0 0 8px; }
+.exp ul { margin: 8px 0 0; padding-left: 20px; }
+.exp ul li { margin-bottom: 4px; font-size: 16px; }
+
+/* Цифры-достижения */
+.stats { display: flex; flex-wrap: wrap; gap: 24px; margin: 20px 0; }
+.stat { flex: 1; min-width: 140px; }
+.stat .num { font-size: 32px; font-weight: 700; color: var(--accent); }
+.stat .label { font-size: 15px; color: var(--muted); }
+
+/* --- Оформление текста статьи --- */
+.post-meta { color: var(--muted); font-size: 15px; margin-bottom: 30px; }
+article img { max-width: 100%; border-radius: 8px; }
+article pre {
+  background: var(--card);
+  padding: 16px;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 15px;
+}
+blockquote {
+  border-left: 3px solid var(--accent);
+  margin: 20px 0;
+  padding: 4px 20px;
+  color: var(--muted);
+}
