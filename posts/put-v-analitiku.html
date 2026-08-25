@@ -4,8 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Как я пришёл в аналитику данных — Александр Федоров</title>
-  <!-- Путь к стилям начинается с ../ , потому что файл лежит в подпапке posts/ -->
+  <!-- Путь к стилям и иконке начинается с ../ , потому что файл лежит в подпапке posts/ -->
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../styles.css">
+  <script>
+    (function () {
+      var t = localStorage.getItem('theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
 </head>
 <body>
 
@@ -15,6 +22,7 @@
       <nav class="site-nav">
         <a href="../index.html">Обо мне</a>
         <a href="../blog.html">Блог</a>
+        <button id="themeBtn" class="theme-toggle" onclick="toggleTheme()" aria-label="Сменить тему">🌙</button>
       </nav>
     </div>
   </header>
@@ -70,6 +78,25 @@
       <a href="mailto:alexandr91132@gmail.com">alexandr91132@gmail.com</a>
     </div>
   </footer>
+
+  <script>
+    function currentTheme() {
+      var t = document.documentElement.getAttribute('data-theme');
+      if (t) return t;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    function updateThemeIcon() {
+      var btn = document.getElementById('themeBtn');
+      if (btn) btn.textContent = currentTheme() === 'dark' ? '☀️' : '🌙';
+    }
+    function toggleTheme() {
+      var next = currentTheme() === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      updateThemeIcon();
+    }
+    updateThemeIcon();
+  </script>
 
 </body>
 </html>

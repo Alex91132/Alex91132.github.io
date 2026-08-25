@@ -5,19 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Александр Федоров — аналитик данных</title>
   <meta name="description" content="Аналитик данных (Data Analyst) с опытом внедрения data-driven решений в нефтегазовой отрасли. Python, SQL, ML-валидация, ETL.">
+
+  <!-- Иконка вкладки -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Превью-карточка для соцсетей (Telegram, LinkedIn, VK) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Александр Федоров — аналитик данных">
+  <meta property="og:description" content="Data-driven решения в нефтегазовой отрасли. Python, SQL, ML-валидация, ETL.">
+  <meta property="og:image" content="https://alex91132.github.io/assets/og.png">
+  <meta property="og:url" content="https://alex91132.github.io">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Применяем сохранённую тему сразу, до отрисовки (без мигания) -->
+  <script>
+    (function () {
+      var t = localStorage.getItem('theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
 </head>
 <body>
 
-  <!-- ШАПКА С МЕНЮ (одинаковая на всех страницах) -->
+  <!-- ШАПКА С МЕНЮ -->
   <header class="site-header">
     <div class="container">
       <a href="index.html" class="site-logo">Александр Федоров</a>
       <nav class="site-nav">
         <a href="index.html">Обо мне</a>
         <a href="#experience">Опыт</a>
+        <a href="#projects">Проекты</a>
         <a href="#skills">Навыки</a>
         <a href="blog.html">Блог</a>
+        <button id="themeBtn" class="theme-toggle" onclick="toggleTheme()" aria-label="Сменить тему">🌙</button>
       </nav>
     </div>
   </header>
@@ -26,18 +48,25 @@
 
     <!-- HERO / ПРЕДСТАВЛЕНИЕ -->
     <section class="intro">
-      <h1>Александр Федоров</h1>
+      <div class="hero-top">
+        <!-- Аватар: пока цветной круг с инициалами. Чтобы поставить фото —
+             замените этот div на <img class="avatar" src="assets/photo.jpg" alt="Александр Федоров"> -->
+        <div class="avatar">АФ</div>
+        <h1>Александр Федоров</h1>
+      </div>
       <p class="lead">
         Аналитик данных (Data Analyst). Внедряю data-driven решения в нефтегазовой
         отрасли, до этого 10+ лет был инженером-нефтяником. Люблю превращать рутинные
         процессы в работающие инструменты.
       </p>
 
-      <!-- Контакты. Телефон можно убрать, если не хотите публиковать. -->
+      <!-- Контакты. Email показан текстом — его видно и можно скопировать,
+           даже если почтовый клиент не открывается по клику. -->
       <div class="links">
-        <a href="mailto:alexandr91132@gmail.com">Email</a>
+        <a href="mailto:alexandr91132@gmail.com">✉ alexandr91132@gmail.com</a>
         <a href="https://t.me/Alex91132" target="_blank" rel="noopener">Telegram</a>
         <a href="https://github.com/Alex91132" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn-primary" href="assets/rezume-fedorov.pdf" target="_blank" rel="noopener">Скачать резюме (PDF)</a>
       </div>
       <p style="color:var(--muted); font-size:15px; margin-top:14px;">
         📍 Красноярск · готов к переезду (Москва, Санкт-Петербург, Казань) и командировкам ·
@@ -147,6 +176,22 @@
       </p>
     </section>
 
+    <!-- ПРОЕКТЫ (пока без подробностей) -->
+    <section id="projects">
+      <h2>Проекты</h2>
+      <p style="color:var(--muted);">Pet-проекты — подробные описания и ссылки добавлю позже.</p>
+
+      <div class="card">
+        <h3>REST API на FastAPI</h3>
+        <p>Сервис на FastAPI для pet-проекта. Описание скоро.</p>
+      </div>
+
+      <div class="card">
+        <h3>Чат-бот для работы с документами (RAG/LLM)</h3>
+        <p>Бот, отвечающий на вопросы по документам компании. Описание скоро.</p>
+      </div>
+    </section>
+
     <!-- НАВЫКИ -->
     <section id="skills">
       <h2>Навыки</h2>
@@ -178,17 +223,53 @@
         <span class="tag">Git / GitLab</span><span class="tag">JupyterHub</span><span class="tag">Yandex Cloud</span>
         <span class="tag">scikit-learn</span>
       </div>
+    </section>
 
-      <p style="color:var(--muted); font-size:15px;">
-        Английский — B2. Обучение: Karpov.courses (Аналитик данных, StartML, Инженер данных,
-        A/B-симулятор, RAG-боты и агенты LLM).
+    <!-- ОБУЧЕНИЕ (акцентный блок) -->
+    <section id="education">
+      <h2>Обучение и курсы</h2>
+      <p style="color:var(--muted);">
+        Английский — B2. Постоянно повышаю квалификацию — в основном на
+        <strong>Karpov.courses</strong>:
       </p>
+      <div class="edu-grid">
+        <div class="edu-card">
+          <div class="year">2026</div>
+          <div class="name">RAG-боты и агенты LLM</div>
+          <div class="place">Karpov.courses</div>
+        </div>
+        <div class="edu-card">
+          <div class="year">2026</div>
+          <div class="name">Инженер данных</div>
+          <div class="place">Karpov.courses</div>
+        </div>
+        <div class="edu-card">
+          <div class="year">2025</div>
+          <div class="name">StartML (ML-инжиниринг)</div>
+          <div class="place">Karpov.courses</div>
+        </div>
+        <div class="edu-card">
+          <div class="year">2025</div>
+          <div class="name">Симулятор A/B тестов</div>
+          <div class="place">Karpov.courses</div>
+        </div>
+        <div class="edu-card">
+          <div class="year">2024</div>
+          <div class="name">Аналитик данных + симулятор аналитика</div>
+          <div class="place">Karpov.courses</div>
+        </div>
+        <div class="edu-card">
+          <div class="year">2016 / 2018</div>
+          <div class="name">Бакалавр и магистр, разработка месторождений</div>
+          <div class="place">РГУ нефти и газа им. Губкина</div>
+        </div>
+      </div>
     </section>
 
     <!-- БЛОГ -->
     <section>
       <h2>Из блога</h2>
-      <a class="card" href="posts/pervyy-post.html">
+      <a class="card" href="posts/put-v-analitiku.html">
         <span class="date">25 августа 2026</span>
         <h3>Как я пришёл в аналитику данных</h3>
         <p>Путь от инженера-нефтяника к data-driven решениям.</p>
@@ -206,6 +287,26 @@
       <a href="https://t.me/Alex91132" target="_blank" rel="noopener">@Alex91132</a>
     </div>
   </footer>
+
+  <!-- Логика переключателя темы -->
+  <script>
+    function currentTheme() {
+      var t = document.documentElement.getAttribute('data-theme');
+      if (t) return t;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    function updateThemeIcon() {
+      var btn = document.getElementById('themeBtn');
+      if (btn) btn.textContent = currentTheme() === 'dark' ? '☀️' : '🌙';
+    }
+    function toggleTheme() {
+      var next = currentTheme() === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      updateThemeIcon();
+    }
+    updateThemeIcon();
+  </script>
 
 </body>
 </html>

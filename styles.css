@@ -16,9 +16,13 @@
   --max-width: 760px;     /* максимальная ширина текста */
 }
 
-/* --- Цвета для тёмной темы (если у пользователя тёмный режим) --- */
+/* --- Тёмная тема ---
+   Работает в двух случаях:
+   1) система в тёмном режиме И пользователь не выбрал светлую вручную;
+   2) пользователь нажал кнопку и выбрал тёмную (data-theme="dark").
+   Набор цветов один и тот же, поэтому он повторён в двух местах. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg:     #0f1117;
     --text:   #e5e7eb;
     --muted:  #9ca3af;
@@ -27,6 +31,15 @@
     --border: #2a2e3a;
     --dot:    #2b3040;
   }
+}
+:root[data-theme="dark"] {
+  --bg:     #0f1117;
+  --text:   #e5e7eb;
+  --muted:  #9ca3af;
+  --accent: #60a5fa;
+  --card:   #1a1d27;
+  --border: #2a2e3a;
+  --dot:    #2b3040;
 }
 
 /* --- Базовые правила --- */
@@ -180,3 +193,76 @@ blockquote {
   padding: 4px 20px;
   color: var(--muted);
 }
+
+/* ========================================================================
+   Дополнительные блоки (аватар, кнопки, обучение, переключатель темы)
+   ======================================================================== */
+
+/* --- Аватар в шапке hero --- */
+.hero-top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 16px;
+}
+.avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  object-fit: cover;               /* если вставите фото — оно впишется в круг */
+  background: var(--accent);       /* пока фото нет — цветной круг с инициалами */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  font-weight: 700;
+  border: 3px solid var(--border);
+}
+.hero-top h1 { margin: 0; }
+
+/* --- Крупная кнопка (например, скачать резюме) --- */
+.btn-primary {
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--accent);
+  color: #fff !important;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+}
+.btn-primary:hover { opacity: .9; }
+
+/* --- Переключатель темы (кнопка в шапке) --- */
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 1;
+  margin-left: 20px;
+}
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+/* --- Блок «Обучение»: акцентные карточки в сетку --- */
+.edu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+.edu-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);   /* акцентная полоса — бросается в глаза */
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+.edu-card .year { font-size: 13px; color: var(--accent); font-weight: 700; }
+.edu-card .name { font-size: 16px; font-weight: 600; margin-top: 2px; }
+.edu-card .place { font-size: 14px; color: var(--muted); margin-top: 2px; }
