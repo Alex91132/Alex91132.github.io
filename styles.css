@@ -12,6 +12,7 @@
   --accent:    #2563eb;   /* акцентный цвет (ссылки, кнопки) */
   --card:      #f4f5f7;   /* фон карточек */
   --border:    #e5e7eb;   /* линии-разделители */
+  --dot:       #dfe3e8;   /* цвет точек фонового узора */
   --max-width: 760px;     /* максимальная ширина текста */
 }
 
@@ -24,6 +25,7 @@
     --accent: #60a5fa;
     --card:   #1a1d27;
     --border: #2a2e3a;
+    --dot:    #20242f;
   }
 }
 
@@ -36,7 +38,11 @@ body {
   font-size: 18px;
   line-height: 1.7;
   color: var(--text);
-  background: var(--bg);
+  /* Фон: основной цвет + ненавязчивый узор из точек (сетка 24×24px).
+     Точки задаются радиальным градиентом, тяжёлых картинок нет. */
+  background-color: var(--bg);
+  background-image: radial-gradient(var(--dot) 1px, transparent 1.4px);
+  background-size: 24px 24px;
   -webkit-font-smoothing: antialiased;
 }
 
