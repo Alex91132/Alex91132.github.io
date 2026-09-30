@@ -880,10 +880,8 @@
       });
       full0 -= 5 * DAY; full1 += 5 * DAY;
       window.__fullSpan = full1 - full0;
-      // по умолчанию — окно ~7 лет у горизонта планирования (как в ГДБУ), весь срок — кнопкой
-      if (!S.rigRange) S.rigRange = (full1 - full0 > 8 * 365.25 * DAY)
-        ? { a: full1 - 7 * 365.25 * DAY, b: full1 }
-        : { a: full0, b: full1 };
+      // по умолчанию — весь период работ, все установки; зум и сдвиг — вручную
+      if (!S.rigRange) S.rigRange = { a: full0, b: full1 };
       var t0 = Math.max(S.rigRange.a, full0), t1 = Math.min(S.rigRange.b, full1);
       if (t1 - t0 < 20 * DAY) t1 = t0 + 20 * DAY;
       var zoomed = (t1 - t0) < (full1 - full0) - DAY;
@@ -988,6 +986,7 @@
             var padC = String(c.pad).replace(/\s+/g, '');
             var dl = padC.length > 6 ? padC.slice(0, 6) : padC;
             var dx = Math.max(x1 + 1, L + 1, lastDiagEnd + 11, lastLabelEnd + 3);
+            if (dx >= W - Rm - 8) dx = Math.max(x1 + 1, W - Rm - 10 - dl.length * 3.2);
             if (dx < W - Rm - 8) {
               svg += '<text x="' + dx.toFixed(1) + '" y="' + (barY - 1) + '" font-size="9.5" font-weight="600" fill="var(--text)" style="paint-order:stroke;stroke:var(--card);stroke-width:3px" transform="rotate(-62 ' + dx.toFixed(1) + ' ' + (barY - 1) + ')">' + esc(dl) + '</text>';
               lastDiagEnd = dx + dl.length * 3.0;
