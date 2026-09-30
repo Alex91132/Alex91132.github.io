@@ -3,10 +3,423 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Сайт временно недоступен</title>
-  <meta name="robots" content="noindex, nofollow">
+  <title>Александр Федоров — аналитик данных</title>
+  <meta name="description" content="Руководитель проекта и аналитик данных. Интеллектуальные и расчётные продукты для нефтегазовой отрасли. Python, SQL, ML-валидация, ETL.">
+
+  <!-- Иконка вкладки -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Превью-карточка для соцсетей (Telegram, LinkedIn, VK) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Александр Федоров — руководитель проекта, аналитик данных">
+  <meta property="og:description" content="Интеллектуальные и расчётные продукты для нефтегазовой отрасли. Python, SQL, ML-валидация, ETL.">
+  <meta property="og:image" content="https://alex91132.github.io/assets/og.png">
+  <meta property="og:url" content="https://alex91132.github.io">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Применяем сохранённую тему сразу, до отрисовки (без мигания) -->
+  <script>
+    (function () {
+      var t = localStorage.getItem('theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
 </head>
-<body style="font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;background:#0f1117;color:#e5e7eb;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;">
-  <p style="font-size:18px;color:#9ca3af;">Сайт временно недоступен.</p>
+<body>
+
+  <!-- ШАПКА С МЕНЮ -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="site-logo">Александр Федоров</a>
+      <nav class="site-nav">
+        <a href="index.html">Обо мне</a>
+        <a href="#experience">Опыт</a>
+        <a href="#projects">Проекты</a>
+        <a href="#skills">Навыки</a>
+        <a href="blog.html">Блог</a>
+        <button id="themeBtn" class="theme-toggle" onclick="toggleTheme()" aria-label="Сменить тему">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- HERO / ПРЕДСТАВЛЕНИЕ -->
+    <section class="intro">
+      <div class="hero-top">
+        <!-- Фото-аватар (квадрат, показывается кругом через CSS object-fit) -->
+        <img class="avatar" src="assets/photo.jpg" alt="Александр Федоров">
+
+        <h1>Александр Федоров</h1>
+      </div>
+      <p class="lead">
+        Руководитель проекта и аналитик данных. Веду разработку интеллектуальных и
+        расчётных продуктов для нефтегазовой отрасли, до этого 10+ лет был
+        инженером-нефтяником. Люблю превращать рутинные процессы в работающие инструменты.
+      </p>
+
+      <!-- Контакты. Email показан текстом — его видно и можно скопировать,
+           даже если почтовый клиент не открывается по клику. -->
+      <div class="links">
+        <a href="mailto:alexandr91132@gmail.com">✉ alexandr91132@gmail.com</a>
+        <a href="https://t.me/Alex91132" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://github.com/Alex91132" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn-primary" href="assets/rezume-fedorov.pdf" target="_blank" rel="noopener">Скачать резюме (PDF)</a>
+      </div>
+      <p style="color:var(--muted); font-size:15px; margin-top:14px;">
+        📍 Красноярск · готов к переезду (Москва, Санкт-Петербург, Казань) и командировкам ·
+        удалёнка / гибрид / офис
+      </p>
+    </section>
+
+    <!-- КЛЮЧЕВЫЕ ЦИФРЫ -->
+    <section class="stats">
+      <div class="stat">
+        <div class="num">11+</div>
+        <div class="label">лет в нефтегазе</div>
+      </div>
+      <div class="stat">
+        <div class="num">&gt;92%</div>
+        <div class="label">точность извлечения ключевых параметров</div>
+      </div>
+      <div class="stat">
+        <div class="num">−70%</div>
+        <div class="label">времени на планирование ремонтов скважин</div>
+      </div>
+    </section>
+
+    <!-- ОБО МНЕ -->
+    <section>
+      <h2>Обо мне</h2>
+      <p>
+        В аналитику пришёл не случайно: когда автоматизировал разбор неструктурированных
+        отчётов и сократил время обработки с нескольких часов до 5–10 минут — понял, что
+        хочу заниматься именно этим. Сейчас фокусируюсь на подготовке данных, продуктовой
+        аналитике, валидации гипотез и построении ETL-пайплайнов.
+      </p>
+      <p>
+        Постоянно учусь и сразу применяю знания на практике: вывожу ML-модели в продакшн,
+        настраиваю CI/CD, делаю REST API для pet-проектов, строю чат-ботов для работы с
+        документами (RAG/LLM). Легко объясняю сложные технические вещи простым языком и
+        перевожу бизнес-задачи на язык данных. Английский подтягивал в том числе на практике —
+        по программе Work and Travel в США (самостоятельность и живое общение). Вне работы
+        11 лет играю в хоккей.
+      </p>
+    </section>
+
+    <!-- ОПЫТ РАБОТЫ -->
+    <section id="experience">
+      <h2>Опыт работы</h2>
+
+      <div class="exp">
+        <div class="period">2025 — настоящее время</div>
+        <h3>Руководитель проектов</h3>
+        <p class="company">Oil and Gas Production Tools</p>
+        <p>
+          Дополнительно к аналитике веду продуктовые направления как руководитель проектов
+          (подробнее — в разделе <a href="#projects">Проекты</a>):
+        </p>
+        <ul>
+          <li>ГидроОптима — ИИ-помощник для эксплуатации и надёжности трубопроводов.</li>
+          <li>Расчётное ядро для добывающих активов заказчика (микросервисы Python + React).</li>
+          <li>Руковожу кросс-функциональной командой: аналитики, backend (Python), frontend (React), QA, DevOps.</li>
+          <li>Собираю и согласую требования, формирую методику, декомпозирую на этапы, отвечаю за приёмку.</li>
+        </ul>
+      </div>
+
+      <div class="exp">
+        <div class="period">Февраль 2025 — настоящее время</div>
+        <h3>Аналитик данных</h3>
+        <p class="company">Oil and Gas Production Tools</p>
+        <p>
+          Связующее звено между инженерами-нефтяниками и ML-командой при разработке
+          интеллектуальных цифровых помощников для отрасли.
+        </p>
+        <ul>
+          <li>Собираю требования у экспертов и перевожу их в ТЗ для ML-команды.</li>
+          <li>Провожу EDA: чищу датасеты, работаю с пропусками, аномалиями, дисбалансом классов.</li>
+          <li>Строю пайплайны автоматической валидации моделей и дашборды мониторинга метрик.</li>
+          <li>Сократил обработку разнородных отчётов с часов до 2–5 минут (точность &gt;92%).</li>
+          <li>Уменьшил время ручной проверки валидации на 60%, повысил Recall критичных осложнений на 15%.</li>
+        </ul>
+      </div>
+
+      <div class="exp">
+        <div class="period">Сентябрь 2024 — Январь 2025</div>
+        <h3>Менеджер отдела планирования и мониторинга новых скважин</h3>
+        <p class="company">РН-Ванкор</p>
+        <ul>
+          <li>Разрабатывал алгоритмы расчёта запускных показателей (РИГИС, ОФП, PVT-модели).</li>
+          <li>Создавал модуль оценки скважин-кандидатов и подбора эффективных ГТМ.</li>
+          <li>Продвинутый Excel/VBA, Power Query, гидродинамическое ПО (Petrel/tNavigator/Eclipse).</li>
+        </ul>
+      </div>
+
+      <div class="exp">
+        <div class="period">Май 2023 — Сентябрь 2024</div>
+        <h3>Главный специалист отдела планирования и мониторинга новых скважин</h3>
+        <p class="company">РН-Ванкор</p>
+        <ul>
+          <li>Геологическое сопровождение бурения 130 скважин (эффективная проходка 80–85%).</li>
+          <li>Запланировал реконструкцию 90 скважин методом ЗБС, организовал бурение 40 скважин.</li>
+          <li>Внедрил модуль прогнозирования запускных показателей и систему подбора ГТМ.</li>
+        </ul>
+      </div>
+
+      <div class="exp">
+        <div class="period">Апрель 2019 — Май 2023</div>
+        <h3>Ведущий инженер отдела планирования и мониторинга новых скважин</h3>
+        <p class="company">РН-Ванкор</p>
+        <ul>
+          <li>Готовил геологические проекты на бурение, схемы кустования и заканчивания.</li>
+          <li>Анализировал расхождения план/факт, актуализировал ПДГТМ.</li>
+        </ul>
+      </div>
+
+      <div class="exp">
+        <div class="period">Июль 2018 — Март 2019</div>
+        <h3>Инженер сопровождения ГРП</h3>
+        <p class="company">ЛУКОЙЛ-Инжиниринг (КогалымНИПИнефть)</p>
+        <ul>
+          <li>Проектировал операции ГРП (FracPro / Meyer / GOHFER), сопровождал полевые работы.</li>
+          <li>Спроектировал 45 операций ГРП с эффективностью 85% (выше среднего по отрасли 70–75%).</li>
+        </ul>
+      </div>
+
+      <div class="exp">
+        <div class="period">Сентябрь 2016 — Июнь 2018</div>
+        <h3>Стажёр</h3>
+        <p class="company">ЛУКОЙЛ-Инжиниринг</p>
+        <ul>
+          <li>С нуля создал базу данных месторождений с геолого-физическими характеристиками и динамикой разработки — научился структурировать неструктурированные данные.</li>
+          <li>Прогнозировал показатели добычи через построение характеристик вытеснения и подбор месторождений-аналогов.</li>
+          <li>Численное моделирование процессов прорыва воды — работа с многопараметрическими зависимостями.</li>
+        </ul>
+      </div>
+
+      <div class="exp">
+        <div class="period">Октябрь 2014 — Декабрь 2016</div>
+        <h3>Техник кафедры РиЭНМ</h3>
+        <p class="company">РГУ нефти и газа (НИУ) им. И.М. Губкина</p>
+        <ul>
+          <li>Проводил экспериментальные исследования: анализировал характеристики насосов и процессы вытеснения на 20-метровых моделях.</li>
+          <li>Научился работать с экспериментальными данными, выявлять закономерности и делать выводы на основе измерений.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ПРОЕКТЫ -->
+    <section id="projects">
+      <h2>Проекты</h2>
+      <p style="color:var(--muted);">Направления, которые веду как руководитель проекта.</p>
+
+      <!-- Проект 1: ГидроОптима (трубопроводы / целостность и надёжность) -->
+      <div class="project">
+        <span class="role">Руководитель проекта</span>
+        <h3>ГидроОптима — ИИ-помощник для эксплуатации трубопроводов</h3>
+        <p class="summary">
+          Система поддержки принятия решений по эксплуатации и надёжности трубопроводов:
+          на основе данных объекта помогает инженеру формировать обоснованные рекомендации,
+          сокращая рутинный аналитический разбор.
+        </p>
+        <ul>
+          <li>Гибридный подход: сочетание детерминированной логики и генеративного ИИ (LLM/RAG).</li>
+          <li>Работа с большим объёмом разнородных данных и документации.</li>
+          <li>Режим поддержки решений — итоговое слово остаётся за инженером.</li>
+        </ul>
+        <p><strong>Моя роль:</strong> постановка задачи и методология, координация
+           ML-инженеров, backend и предметных экспертов, приёмка результатов.</p>
+      </div>
+
+      <!-- Проект 2: расчётные модули (заказчик обезличен) -->
+      <div class="project">
+        <span class="role">Руководитель проекта</span>
+        <h3>Расчётное ядро для добывающих активов</h3>
+        <p class="nda">Заказчик — крупная нефтегазовая компания (под NDA).</p>
+        <p class="summary">
+          Набор расчётных микросервисов для инженерного анализа скважин: физика пласта и
+          ствола «под капотом», результаты сверяются с эталонным ПО. Два актива:
+        </p>
+
+        <div class="sub">⛽ Газовый актив</div>
+        <ul>
+          <li>PVT-модуль: свойства газа из компонентного состава (z-фактор, вязкость, Bg).</li>
+          <li>Приток (IPR) и расчёт потока в стволе (VLP) с многофазными корреляциями.</li>
+          <li>Материальный баланс с аквифером, диагностика p/z и адаптация запасов на историю.</li>
+        </ul>
+
+        <div class="sub">🛢 Нефтяные скважины с ОРЭ (два пласта: пакер + клапан + ЭЦН)</div>
+        <ul>
+          <li>Единый PVT-модуль (нефть / газ / вода), IPR по каждому пласту.</li>
+          <li>VLP с моделью клапана ОРЭ и насоса ЭЦН, узловой анализ (поиск рабочей точки).</li>
+          <li>Диагностика режима и разнесение добычи по пластам, подбор оптимального режима.</li>
+          <li>Материальный баланс, деклайн-анализ и расчёт КИН по объектам.</li>
+        </ul>
+
+        <ul style="margin-top:12px;">
+          <li><strong>Роль руководителя:</strong> сбор и согласование требований (User Stories),
+              методология расчётов, декомпозиция на этапы/инкременты, координация команды
+              (аналитики, backend Python, frontend React, QA, DevOps, дизайнер), приёмка результатов.</li>
+        </ul>
+      </div>
+
+      <!-- Pet-проекты -->
+      <h3 style="margin-top:28px;">Pet-проекты</h3>
+      <a class="card" href="ab-simulator/">
+        <h3>Симулятор A/B-тестов ↗</h3>
+        <p>Интерактивный инструмент: калькулятор размера выборки, визуализация мощности
+           и Монте-Карло симуляция тысяч экспериментов — ошибки I/II рода, «проклятие
+           победителя», поведение p-value. Чистый HTML + JavaScript, без библиотек;
+           расчёты сверены с эталонными значениями.</p>
+      </a>
+      <a class="card" href="drilling-carpet/">
+        <h3>Ковёр бурения — генератор графика строительства скважин ↗</h3>
+        <p>Загрузите Excel со скважинами — и получите график движения буровых установок:
+           в каком порядке каждая БУ обуривает кусты, с датами и числом скважин (язык ГДБУ,
+           но с зумом и читаемыми подписями). Дополнительно — детальный ковёр по скважинам
+           куста и режим «по суткам». Парсер ищет столбцы по заголовкам, порядок любой.
+           Переосмысление модуля планирования кустового бурения из практики в РН-Ванкор.</p>
+      </a>
+      <a class="card" href="https://github.com/Alex91132/houses_ms" target="_blank" rel="noopener">
+        <h3>REST API на FastAPI ↗ <span class="tag" style="vertical-align:middle;">в разработке</span></h3>
+        <p>Микросервис-каталог объектов: FastAPI + SQLModel + PostgreSQL.
+           <strong>Уже реализовано:</strong> эндпоинты списка и карточки, фильтрация по цене и
+           сортировка, типизированные ответы (Pydantic), внедрение зависимостей, слоёная
+           архитектура (api / core / db / schemas).
+           <strong>В планах:</strong> чтение из БД вместо демо-данных, тесты и документация.</p>
+      </a>
+      <div class="card">
+        <h3>Чат-бот для работы с документами (RAG/LLM)</h3>
+        <p>Бот, отвечающий на вопросы по документам (RAG). Репозиторий пока не опубликован.</p>
+      </div>
+    </section>
+
+    <!-- НАВЫКИ -->
+    <section id="skills">
+      <h2>Навыки</h2>
+
+      <h3>Языки и анализ</h3>
+      <div class="tags">
+        <span class="tag">Python</span><span class="tag">pandas</span><span class="tag">NumPy</span>
+        <span class="tag">SQL</span><span class="tag">EDA</span>
+        <span class="tag">A/A и A/B тесты</span><span class="tag">валидация ML-моделей</span>
+      </div>
+
+      <h3>Базы данных и хранилища</h3>
+      <div class="tags">
+        <span class="tag">PostgreSQL</span><span class="tag">ClickHouse</span><span class="tag">Greenplum</span>
+        <span class="tag">S3</span><span class="tag">HDFS</span>
+      </div>
+
+      <h3>Визуализация</h3>
+      <div class="tags">
+        <span class="tag">Apache Superset</span><span class="tag">Redash</span><span class="tag">Tableau</span>
+        <span class="tag">Matplotlib</span><span class="tag">Seaborn</span><span class="tag">Plotly</span>
+        <span class="tag">Figma</span><span class="tag">Draw.io</span>
+      </div>
+
+      <h3>Инженерия данных и инфраструктура</h3>
+      <div class="tags">
+        <span class="tag">Apache Airflow</span><span class="tag">Apache Spark</span><span class="tag">Apache Kafka</span>
+        <span class="tag">Docker</span><span class="tag">Docker-compose</span><span class="tag">FastAPI</span>
+        <span class="tag">Git / GitLab</span><span class="tag">JupyterHub</span><span class="tag">Yandex Cloud</span>
+        <span class="tag">scikit-learn</span>
+      </div>
+    </section>
+
+    <!-- ОБУЧЕНИЕ (акцентный блок) -->
+    <section id="education">
+      <h2>Обучение и курсы</h2>
+      <p style="color:var(--muted);">
+        Английский — B2. Постоянно повышаю квалификацию — в основном на
+        <strong>Karpov.courses</strong>:
+      </p>
+      <div class="edu-grid">
+        <div class="edu-card">
+          <div class="year">2026</div>
+          <div class="name">RAG-боты и агенты LLM</div>
+          <div class="place">Karpov.courses</div>
+        </div>
+        <div class="edu-card">
+          <div class="year">2026</div>
+          <div class="name">Инженер данных</div>
+          <div class="place">Karpov.courses</div>
+        </div>
+        <div class="edu-card">
+          <div class="year">2025</div>
+          <div class="name">StartML (ML-инжиниринг)</div>
+          <div class="place">Karpov.courses</div>
+        </div>
+        <div class="edu-card">
+          <div class="year">2025</div>
+          <div class="name">Симулятор A/B тестов</div>
+          <div class="place">Karpov.courses</div>
+        </div>
+        <div class="edu-card">
+          <div class="year">2024</div>
+          <div class="name">Аналитик данных + симулятор аналитика</div>
+          <div class="place">Karpov.courses</div>
+        </div>
+        <div class="edu-card">
+          <div class="year">2016 / 2018</div>
+          <div class="name">Бакалавр и магистр, разработка месторождений</div>
+          <div class="place">РГУ нефти и газа им. Губкина</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- БЛОГ -->
+    <section>
+      <h2>Из блога</h2>
+      <a class="card" href="posts/put-v-analitiku.html">
+        <span class="date">25 августа 2026</span>
+        <h3>Как я пришёл в аналитику данных</h3>
+        <p>Путь от инженера-нефтяника к data-driven решениям.</p>
+      </a>
+      <p><a href="blog.html">Все статьи →</a></p>
+    </section>
+
+  </main>
+
+  <!-- ПОДВАЛ -->
+  <footer class="site-footer">
+    <div class="container">
+      © 2026 Александр Федоров ·
+      <a href="mailto:alexandr91132@gmail.com">alexandr91132@gmail.com</a> ·
+      <a href="https://t.me/Alex91132" target="_blank" rel="noopener">@Alex91132</a>
+    </div>
+  </footer>
+
+  <!-- Кнопка «наверх» -->
+  <button class="to-top" id="toTop" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="Наверх">↑</button>
+
+  <!-- Логика переключателя темы и кнопки «наверх» -->
+  <script>
+    function currentTheme() {
+      var t = document.documentElement.getAttribute('data-theme');
+      if (t) return t;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    function updateThemeIcon() {
+      var btn = document.getElementById('themeBtn');
+      if (btn) btn.textContent = currentTheme() === 'dark' ? '☀️' : '🌙';
+    }
+    function toggleTheme() {
+      var next = currentTheme() === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      updateThemeIcon();
+    }
+    updateThemeIcon();
+
+    // Кнопка «наверх» появляется после прокрутки на 400px
+    window.addEventListener('scroll', function () {
+      var b = document.getElementById('toTop');
+      if (b) b.style.display = window.scrollY > 400 ? 'flex' : 'none';
+    });
+  </script>
+
 </body>
 </html>

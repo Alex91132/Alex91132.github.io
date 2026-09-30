@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Блог — Александр Федоров</title>
+  <meta name="description" content="Статьи и заметки про аналитику данных">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    (function () {
+      var t = localStorage.getItem('theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="site-logo">Александр Федоров</a>
+      <nav class="site-nav">
+        <a href="index.html">Обо мне</a>
+        <a href="blog.html">Блог</a>
+        <button id="themeBtn" class="theme-toggle" onclick="toggleTheme()" aria-label="Сменить тему">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Блог</h1>
+    <p class="lead" style="color:var(--muted);">Заметки про аналитику данных, обучение и проекты.</p>
+
+    <!-- Новую статью добавляете так:
+         1) копируете файл posts/put-v-analitiku.html под новым именем;
+         2) добавляете сюда одну карточку <a class="card">...</a> со ссылкой на него. -->
+
+    <a class="card" href="posts/put-v-analitiku.html">
+      <span class="date">25 августа 2026</span>
+      <h3>Как я пришёл в аналитику данных</h3>
+      <p>Путь от инженера-нефтяника к data-driven решениям.</p>
+    </a>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      © 2026 Александр Федоров ·
+      <a href="mailto:alexandr91132@gmail.com">alexandr91132@gmail.com</a>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="Наверх">↑</button>
+
+  <script>
+    function currentTheme() {
+      var t = document.documentElement.getAttribute('data-theme');
+      if (t) return t;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    function updateThemeIcon() {
+      var btn = document.getElementById('themeBtn');
+      if (btn) btn.textContent = currentTheme() === 'dark' ? '☀️' : '🌙';
+    }
+    function toggleTheme() {
+      var next = currentTheme() === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      updateThemeIcon();
+    }
+    updateThemeIcon();
+
+    window.addEventListener('scroll', function () {
+      var b = document.getElementById('toTop');
+      if (b) b.style.display = window.scrollY > 400 ? 'flex' : 'none';
+    });
+  </script>
+
+</body>
+</html>
