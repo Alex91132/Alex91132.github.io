@@ -283,7 +283,11 @@
            Переосмысление модуля планирования кустового бурения из практики в РН-Ванкор.</p>
       </a>
       <a class="card" href="https://github.com/Alex91132/oil-production-dwh" target="_blank" rel="noopener">
-        <h3>Хранилище данных нефтедобычи: PostgreSQL → Airflow → ClickHouse ↗</h3>
+        <h3>Платформа данных нефтедобычи: PostgreSQL → Airflow → ClickHouse → Superset ↗</h3>
+        <img src="assets/projects/oil-dwh-dashboard.jpg"
+             alt="Дашборд Superset: добыча, фонд, обводнённость, компенсация отборов по месторождениям"
+             loading="lazy"
+             style="width:100%; border-radius:8px; border:1px solid var(--border); margin:8px 0 10px;">
         <p>Спроектированная с нуля БД: месторождения, скважины, суточная добыча, ГТМ и график
            буровых. Целостность на уровне БД (составные FK, EXCLUDE-ограничения на пересечение
            периодов), партиционирование, BRIN-индекс с подобранной настройкой — замеры
@@ -291,8 +295,10 @@
            отборов, «острова и пропуски» в простоях, ROLLUP.
            <strong>Хранилище:</strong> ETL на Airflow в ClickHouse со схемой «звезда» —
            идемпотентная загрузка с атомарной подменой партиций, backfill истории, сверка
-           с источником до последнего знака. Синтетические данные по модели Арпса, весь
-           стек поднимается одной командой в Docker.</p>
+           с источником до последнего знака.
+           <strong>Дашборд:</strong> Superset «как код» — графики, метрики и фильтры создаются
+           скриптом через REST API. Синтетические данные по модели Арпса, весь стек
+           поднимается одной командой в Docker.</p>
       </a>
       <a class="card" href="https://github.com/Alex91132/houses_ms" target="_blank" rel="noopener">
         <h3>REST API на FastAPI ↗ <span class="tag" style="vertical-align:middle;">в разработке</span></h3>
