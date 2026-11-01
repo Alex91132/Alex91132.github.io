@@ -3,19 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Александр Федоров — аналитик данных</title>
-  <meta name="description" content="Руководитель проекта и аналитик данных. Интеллектуальные и расчётные продукты для нефтегазовой отрасли. Python, SQL, ML-валидация, ETL.">
+  <title>Александр Федоров — руководитель проектов и аналитик данных</title>
+  <meta name="description" content="Руководитель проектов и аналитик данных в нефтегазе: интеллектуальные и расчётные продукты для добычи. Python, SQL, ML-валидация, ETL.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1117" media="(prefers-color-scheme: dark)">
 
   <!-- Иконка вкладки -->
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 
   <!-- Превью-карточка для соцсетей (Telegram, LinkedIn, VK) -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Александр Федоров — руководитель проекта, аналитик данных">
-  <meta property="og:description" content="Интеллектуальные и расчётные продукты для нефтегазовой отрасли. Python, SQL, ML-валидация, ETL.">
+  <meta property="og:site_name" content="Александр Федоров">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Александр Федоров — руководитель проектов и аналитик данных">
+  <meta property="og:description" content="Руководитель проектов и аналитик данных в нефтегазе: интеллектуальные и расчётные продукты для добычи. Python, SQL, ML-валидация, ETL.">
   <meta property="og:image" content="https://alex91132.github.io/assets/og.png">
-  <meta property="og:url" content="https://alex91132.github.io">
+  <meta property="og:image:alt" content="Александр Федоров — руководитель проектов и аналитик данных">
+  <meta property="og:url" content="https://alex91132.github.io/">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Александр Федоров — руководитель проектов и аналитик данных">
+  <meta name="twitter:description" content="Руководитель проектов и аналитик данных в нефтегазе: интеллектуальные и расчётные продукты для добычи. Python, SQL, ML-валидация, ETL.">
+  <meta name="twitter:image" content="https://alex91132.github.io/assets/og.png">
 
   <link rel="stylesheet" href="styles.css">
 
@@ -25,6 +34,25 @@
       var t = localStorage.getItem('theme');
       if (t) document.documentElement.setAttribute('data-theme', t);
     })();
+  </script>
+
+  <!-- Структурированные данные для поиска и парсеров резюме -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Александр Федоров",
+    "jobTitle": "Руководитель проектов и аналитик данных",
+    "url": "https://alex91132.github.io/",
+    "image": "https://alex91132.github.io/assets/photo.jpg",
+    "email": "mailto:alexandr91132@gmail.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Красноярск", "addressCountry": "RU" },
+    "sameAs": ["https://github.com/Alex91132", "https://t.me/Alex91132"],
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "РГУ нефти и газа (НИУ) им. И.М. Губкина" },
+    "knowsAbout": ["Python", "SQL", "pandas", "A/B-тестирование", "валидация ML-моделей",
+                   "PostgreSQL", "ClickHouse", "Apache Airflow", "Docker", "FastAPI", "нефтегазовая аналитика"],
+    "knowsLanguage": ["ru", "en"]
+  }
   </script>
 </head>
 <body>
@@ -50,14 +78,14 @@
     <section class="intro">
       <div class="hero-top">
         <!-- Фото-аватар (квадрат, показывается кругом через CSS object-fit) -->
-        <img class="avatar" src="assets/photo.jpg" alt="Александр Федоров">
+        <img class="avatar" src="assets/photo.jpg" width="600" height="600" alt="Александр Федоров">
 
         <h1>Александр Федоров</h1>
       </div>
       <p class="lead">
-        Руководитель проекта и аналитик данных. Веду разработку интеллектуальных и
-        расчётных продуктов для нефтегазовой отрасли, до этого 10+ лет был
-        инженером-нефтяником. Люблю превращать рутинные процессы в работающие инструменты.
+        Руководитель проектов и аналитик данных. Веду разработку интеллектуальных и
+        расчётных продуктов для нефтегазовой отрасли, до этого 8 лет был
+        инженером-нефтяником, а начинал в отраслевой науке.
       </p>
 
       <!-- Контакты. Email показан текстом — его видно и можно скопировать,
@@ -299,6 +327,35 @@
            и оценка качества извлечения, документация, участие в разработке.</p>
       </div>
 
+      <!-- Проект 4: перенос инженерного расчётника на Python (код открыт) -->
+      <div class="project">
+        <span class="role">Аналитик · разработка</span>
+        <h3>Инженерный расчётник скважины: перенос Excel/VBA на Python</h3>
+        <p class="nda">Расчётная методика — из рабочего инструмента инженеров.
+           Исходная книга и данные не публикуются, примеры обезличены.</p>
+        <p class="summary">
+          РИГИС на входе — дебиты нефти, жидкости и воды по каждому интервалу и по стволу в целом,
+          оптимальная расстановка фильтров с изоляцией обводнённых участков пакерами, раскладка
+          хвостовика, прогноз с конусами воды и газа, экономика. Вторая часть — расчёт добычи
+          по рейтингу ГТМ: запасы, КИН, помесячный профиль с ППД.
+        </p>
+        <ul>
+          <li>Формулы перенесены дословно и сверены с кэшем книги: РИГИС и рейтинг ГТМ — до 1e-9,
+              палетки заводнения — до 1e-12.</li>
+          <li>Подбор фильтров вместо «Поиска решения» Excel сделан точным: динамическое
+              программирование по срезам с итерациями на взаимовлияние секций и перетоки.</li>
+          <li>Побочный результат: на той же скважине «Поиск решения» застревал в локальном
+              оптимуме и давал 329,3 т/сут при любом пределе обводнённости от 5 до 98 % —
+              точный подбор даёт 532,8 и 604,7 т/сут.</li>
+          <li>В самой книге найдены ошибки, включая ошибки в VBA, сохранённые ради совпадения
+              расчёта, — разобраны в <code>docs/PORTING.md</code>. Python-пакет с тестами,
+              CLI и интерфейсом на Streamlit.</li>
+        </ul>
+        <p><strong>Моя роль:</strong> перенос методики, расчётное ядро и интерфейс, сверка
+           с книгой, руководство пользователя и разбор найденных расхождений.
+           <a href="https://github.com/Alex91132/retools" target="_blank" rel="noopener">Код и документация →</a></p>
+      </div>
+
       <!-- Pet-проекты -->
       <h3 style="margin-top:28px;">Pet-проекты</h3>
       <a class="card" href="ab-simulator/">
@@ -311,6 +368,7 @@
       <a class="card" href="https://alex91132.github.io/ab-testing-engine/" target="_blank" rel="noopener">
         <h3>Движок анализа A/B-экспериментов ↗</h3>
         <img src="assets/projects/ab-engine.jpg"
+             width="1000" height="573"
              alt="Отчёт по эксперименту: решение, проверка сплита, метрики с CUPED и поправкой Холма"
              loading="lazy"
              style="width:100%; border-radius:8px; border:1px solid var(--border); margin:8px 0 10px;">
@@ -326,6 +384,7 @@
       <a class="card" href="https://alex91132.github.io/ab-case-email-campaign/" target="_blank" rel="noopener">
         <h3>A/B-кейс на реальных данных: какую email-рассылку слать и кому ↗</h3>
         <img src="assets/projects/ab-case.jpg"
+             width="1000" height="505"
              alt="Записка с решением по эксперименту с email-рассылкой: рекомендация, проверка рандомизации, эффект"
              loading="lazy"
              style="width:100%; border-radius:8px; border:1px solid var(--border); margin:8px 0 10px;">
@@ -341,6 +400,7 @@
       <a class="card" href="https://alex91132.github.io/online-retail-metrics/" target="_blank" rel="noopener">
         <h3>Метрики интернет-магазина: что случилось с выручкой ↗</h3>
         <img src="assets/projects/retail.jpg"
+             width="1000" height="428"
              alt="Мост выручки год к году: ушедшие клиенты, оставшиеся, новые, продажи без ID"
              loading="lazy"
              style="width:100%; border-radius:8px; border:1px solid var(--border); margin:8px 0 10px;">
@@ -351,9 +411,10 @@
            Итог: выручка +1,9 %, но постоянные клиенты покупают на 8 % реже, а рост дали заказы без ID
            и новые клиенты. Дашборд в Metabase, собранный «как код» через API, и записка с рекомендациями.</p>
       </a>
-      <a class="card" href="https://github.com/Alex91132/wallet-data-platform" target="_blank" rel="noopener">
+      <a class="card" href="https://alex91132.github.io/wallet-data-platform/" target="_blank" rel="noopener">
         <h3>Кошелёк от транзакции до решения: PostgreSQL → CDC → ClickHouse → dbt ↗</h3>
         <img src="assets/projects/wallet.jpg"
+             width="1650" height="630"
              alt="Доходимость шагов формы KYC до и после редизайна; экономика A/B-теста кешбэка на одного участника"
              loading="lazy"
              style="width:100%; border-radius:8px; border:1px solid var(--border); margin:8px 0 10px;">
@@ -371,6 +432,7 @@
       <a class="card" href="https://alex91132.github.io/music-recsys/" target="_blank" rel="noopener">
         <h3>Рекомендации музыки: двухэтапная система на данных Яндекс Музыки ↗</h3>
         <img src="assets/projects/music-recsys.jpg"
+             width="1400" height="560"
              alt="Качество рекомендаций отдельно по трекам, найденным самостоятельно и пришедшим из рекомендаций"
              loading="lazy"
              style="width:100%; border-radius:8px; border:1px solid var(--border); margin:8px 0 10px;">
@@ -385,6 +447,7 @@
       <a class="card" href="https://alex91132.github.io/paris-dvf-eda/" target="_blank" rel="noopener">
         <h3>Рынок жилья Парижа: EDA 317 тыс. сделок ↗</h3>
         <img src="assets/projects/paris-dvf.jpg"
+             width="1400" height="358"
              alt="Карта медианной цены за м² по ячейкам 300 м и гедонический индекс цен Парижа и пригорода 2021–2024"
              loading="lazy"
              style="width:100%; border-radius:8px; border:1px solid var(--border); margin:8px 0 10px;">
@@ -410,6 +473,7 @@
       <a class="card" href="https://github.com/Alex91132/oil-production-dwh" target="_blank" rel="noopener">
         <h3>Платформа данных нефтедобычи: PostgreSQL → Airflow → ClickHouse → Superset ↗</h3>
         <img src="assets/projects/oil-dwh-dashboard.jpg"
+             width="1000" height="722"
              alt="Дашборд Superset: добыча, фонд, обводнённость, компенсация отборов по месторождениям"
              loading="lazy"
              style="width:100%; border-radius:8px; border:1px solid var(--border); margin:8px 0 10px;">
@@ -428,6 +492,7 @@
       <a class="card" href="https://alex91132.github.io/gtm-causal-inference/" target="_blank" rel="noopener">
         <h3>Сколько нефти дал ГРП: причинный анализ эффекта ГТМ ↗</h3>
         <img src="assets/projects/gtm-causal.jpg"
+             width="1000" height="459"
              alt="Оценки эффекта ГРП восемью методами против истинного значения"
              loading="lazy"
              style="width:100%; border-radius:8px; border:1px solid var(--border); margin:8px 0 10px;">
@@ -444,6 +509,7 @@
       <a class="card" href="https://alex91132.github.io/well-log-lithology/" target="_blank" rel="noopener">
         <h3>Литология по каротажу: ML-модель и сервис ↗</h3>
         <img src="assets/projects/litho.jpg"
+             width="1000" height="702"
              alt="Каротаж скважины 17/4-1: литология по интерпретации геолога и по модели, уверенность модели"
              loading="lazy"
              style="width:100%; border-radius:8px; border:1px solid var(--border); margin:8px 0 10px;">
