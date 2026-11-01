@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Карта сайта: главная, блог и опубликованные страницы проектов.
+     Страницы проектов физически лежат в своих репозиториях, но отдаются с этого же домена. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://alex91132.github.io/</loc><lastmod>2026-11-01</lastmod><priority>1.0</priority></url>
+  <url><loc>https://alex91132.github.io/blog.html</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alex91132.github.io/posts/put-v-analitiku.html</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alex91132.github.io/ab-simulator/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alex91132.github.io/drilling-carpet/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alex91132.github.io/ab-testing-engine/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alex91132.github.io/ab-case-email-campaign/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alex91132.github.io/online-retail-metrics/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alex91132.github.io/wallet-data-platform/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alex91132.github.io/music-recsys/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alex91132.github.io/paris-dvf-eda/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alex91132.github.io/gtm-causal-inference/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://alex91132.github.io/well-log-lithology/</loc><lastmod>2026-11-01</lastmod></url>
+</urlset>

@@ -45,6 +45,10 @@
 /* --- Базовые правила --- */
 * { box-sizing: border-box; }
 
+/* Картинки: width/height в разметке задают пропорции (резерв места до загрузки),
+   а height:auto не даёт им искажаться при width:100%. Аватар перекрывается .avatar. */
+img { height: auto; max-width: 100%; }
+
 body {
   margin: 0;
   font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
