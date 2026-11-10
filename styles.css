@@ -239,6 +239,20 @@ blockquote {
 }
 .btn-primary:hover { opacity: .9; }
 
+/* --- Вторичная кнопка (якорь к блоку сертификатов) --- */
+.btn-secondary {
+  display: inline-block;
+  padding: 10px 20px;
+  background: transparent;
+  color: var(--accent) !important;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+}
+.btn-secondary:hover { background: var(--accent); color: #fff !important; }
+
 /* --- Переключатель темы (кнопка в шапке) --- */
 .theme-toggle {
   background: transparent;
