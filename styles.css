@@ -270,6 +270,10 @@ blockquote {
 .edu-card .year { font-size: 13px; color: var(--accent); font-weight: 700; }
 .edu-card .name { font-size: 16px; font-weight: 600; margin-top: 2px; }
 .edu-card .place { font-size: 14px; color: var(--muted); margin-top: 2px; }
+.edu-card .cert { display:inline-block; margin-top:8px; font-size:14px; font-weight:600; color:var(--accent); text-decoration:none; border:1px solid var(--border); border-radius:6px; padding:4px 10px; }
+.edu-card .cert:hover { background:var(--accent); color:#fff; }
+.cert-extra { margin-top:16px; font-size:14px; color:var(--muted); }
+.cert-extra a { color:var(--accent); font-weight:600; text-decoration:none; }
 
 /* --- Крупные карточки проектов (роль руководителя) --- */
 .project {
